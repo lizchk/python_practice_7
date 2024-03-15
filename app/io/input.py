@@ -45,3 +45,8 @@ def read_file_by_pandas(path):
     except FileNotFoundError:
         print("Input data file not found.")
         return None
+    except pandas.errors.EmptyDataError:
+        print(f'CSV file with path {path} is empty')
+        return None
+
+
